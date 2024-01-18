@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ChatComponent from './ChatComponent'; // Asume que este es tu componente de chat
+import LogoLargo from "../assets/img/LABORALJURIDICO.jpeg";
 
 export default function Formulario() {
   const [showChat, setShowChat] = useState(false);
@@ -19,8 +20,7 @@ export default function Formulario() {
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
             className="mx-auto h-10 w-auto"
-            src="src/assets/img/LABORALJURIDICO.jpeg"
-            alt="Your Company"
+            src={LogoLargo}
           />
             <h2 className="mt-3 text-center text-xl font-bold leading-9 tracking-tight text-gray-900">
               Ingresa tus datos para iniciar una conversación con un asistente legal virtual

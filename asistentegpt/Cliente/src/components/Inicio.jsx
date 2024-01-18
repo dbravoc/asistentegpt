@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import LogoMorado from "../assets/img/LABORAL JURIDICO3.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsappSquare } from '@fortawesome/free-brands-svg-icons';
 
 const navigation = [
   { name: 'Asistencia virtual', href: '#' },
@@ -20,7 +23,7 @@ export default function Inicio() {
               <span className="sr-only">Your Company</span>
               <img
                 className="h-20 w-auto"
-                src='src/assets/img/LABORAL JURIDICO3.png'
+                src={LogoMorado}
                 alt=""
               />
             </a>
@@ -43,8 +46,8 @@ export default function Inicio() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-              Escríbenos un whatsapp <span aria-hidden="true">&rarr;</span>
+            <a href="#" className="text-5xl text-indigo-700 font-semibold leading-6">
+              <span className='text-lg'>Conversemos   </span> <FontAwesomeIcon  icon={faWhatsappSquare} />
             </a>
           </div>
         </nav>
@@ -52,14 +55,6 @@ export default function Inicio() {
           <div className="fixed inset-0 z-50" />
           <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
-                <span className="sr-only">Your Company</span>
-                <img
-                  className="h-8 w-auto"
-                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                  alt=""
-                />
-              </a>
               <button
                 type="button"
                 className="-m-2.5 rounded-md p-2.5 text-gray-700"

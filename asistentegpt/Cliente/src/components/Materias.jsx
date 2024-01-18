@@ -1,3 +1,11 @@
+import React from 'react';
+import mariano1 from "../assets/img/mariano perfil.png";
+import mariano2 from "../assets/img/m2.jpeg";
+import LogoMorado from "../assets/img/LABORAL JURIDICO3.png";
+import david from "../assets/img/david.jpeg";
+
+
+
 const features = [
     { name: 'Despido injustificado', description: 'Asistencia legal en despidos sin causa, enfocada en derechos y compensaciones."' },
     { name: 'Autodespido', description: 'Orientación legal para rescisiones laborales iniciadas por incumplimientos del empleador.' },
@@ -10,16 +18,10 @@ const features = [
   
   export default function Example() {
     return (
-      <div className="bg-white">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-6 py-24 sm:px-6 sm:py-1 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
+        <div className="mx-auto grid grid-cols-1 items-center gap-x-48 gap-y-16 px-6 py-6 sm:py-6 sm:grid-cols-2 sm:px-8">
           <div>
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Materias de expertiz</h2>
-            <p className="mt-4 text-gray-500">
-              The walnut wood card tray is precision milled to perfectly fit a stack of Focus cards. The powder coated
-              steel divider separates active cards from new ones, or can be used to archive important task lists.
-            </p>
-  
-            <dl className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
+            <dl className="mt-4 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
               {features.map((feature) => (
                 <div key={feature.name} className="border-t border-gray-200 pt-4">
                   <dt className="font-medium text-gray-900">{feature.name}</dt>
@@ -28,30 +30,26 @@ const features = [
               ))}
             </dl>
           </div>
-          <div className="grid grid-cols-2 grid-rows-2 gap-4 sm:gap-6 lg:gap-8">
-            <img
-              src="src/assets/img/LABORAL JURIDICO3.png"
-              alt="Walnut card tray with white powder coated steel divider and 3 punchout holes."
-              className="rounded-lg bg-gray-100"
-            />
-            <img
-              src="src/assets/img/DALL·E 2023-12-22 16.13.27 - A depiction of 'Unjust Dismissal' in a legal setting. The scene shows an employee being notified of their dismissal in an office, with a look of shock.png"
-              alt="Top down view of walnut card tray with embedded magnets and card groove."
-              className="rounded-lg bg-gray-100"
-            />
-            <img
-              src="src/assets/img/DALL·E 2023-12-22 16.13.35 - A scene illustrating 'Self-dismissal' in a workplace context. The image shows an employee in a thoughtful pose, holding a legal document that signifie.png"
-              alt="Side of walnut card tray with card groove and recessed card area."
-              className="rounded-lg bg-gray-100"
-            />
-            <img
-              src="src/assets/img/DALL·E 2023-12-22 16.13.40 - Illustration representing 'Violation of Rights' in the workplace. The image portrays an employee facing a challenging situation, such as harassment or.png"
-              alt="Walnut card tray filled with cards and card angled in dedicated groove."
-              className="rounded-lg bg-gray-100"
-            />
+              <div className="grid grid-cols-2 grid-rows-2 gap-0">
+                <img src={LogoMorado} alt="" className='rounded-2xl w-52 h-52 object-cover my-5'/>
+              <div className='flex flex-col justify-center items-center'>
+                <img src={mariano1} alt=""  className='rounded-full w-48 h-48 object-cover my-5' />
+                <a href='https://www.linkedin.com/in/mariano-hern%C3%A1ndez-garc%C3%ADa-070b5a13b/' className='font-bold text-indigo-700'>Mariano Hernández</a>
+                <p>Experto Laboral y Corporativo</p>
+                </div>
+              <div className='flex flex-col justify-center items-center'>
+                <img src={mariano2} alt=""  className='rounded-full w-48 h-48 object-cover my-5' />
+                <a href='https://www.linkedin.com/in/soledad-rodr%C3%ADguez-sanhueza-7399b9187/' className='font-bold text-indigo-700'>Soledad Rodríguez</a>
+                <p>Experta Laboral y Familia</p>
+                </div>
+              <div className='flex flex-col justify-center items-center'>
+                <img src={david} alt=""  className='rounded-full w-48 h-48 object-cover my-5' />
+                <a href='https://www.linkedin.com/in/bravocisterna/' className='font-bold text-indigo-700'>David Bravo</a>
+                <p>Consultor Legaltech</p>
+                </div>
+
           </div>
         </div>
-      </div>
     )
   }
   
