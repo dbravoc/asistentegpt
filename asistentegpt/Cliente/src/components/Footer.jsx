@@ -1,3 +1,7 @@
+import LWT from "../assets/img/Logo LwT.png";
+import MHG from "../assets/img/m.jpeg";
+
+
 export default function Footer() {
     return (
       <div className="bg-white py-24 sm:py-32">
@@ -9,7 +13,7 @@ export default function Footer() {
             <a href="">
             <img
               className="max-h-20 w-auto object-contain"
-              src="src/assets/img/m.jpeg"
+              src={MHG}
               alt="Transistor"
               width={200}
               height={48}
@@ -18,7 +22,7 @@ export default function Footer() {
             <a href="">
             <img
               className="max-h-20 w-auto object-contain"
-              src="src/assets/img/Logo LwT.png"
+              src={LWT}
               alt="Reform"
               width={300}
               height={300}
