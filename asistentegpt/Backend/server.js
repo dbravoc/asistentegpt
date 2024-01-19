@@ -6,11 +6,7 @@ const { OpenAI } = require('openai');
 
 const app = express();
 
-app.use(cors({
-    origin: 'https://asistentegpt.vercel.app',
-    optionsSuccessStatus: 200
-
-}));
+app.use(cors());
 
 app.use(bodyParser.json());
 
