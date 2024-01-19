@@ -13,7 +13,7 @@ export default function ChatComponent() {
         setMessages(messages => [userMessage, ...messages]);
 
         try {
-            const response = await fetch('http://localhost:3000/', {
+            const response = await fetch('https://asistentegpt-backend.vercel.app/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ userMessage: messageInput }),
