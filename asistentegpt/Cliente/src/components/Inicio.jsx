@@ -5,6 +5,8 @@ import LogoMorado from "../assets/img/LABORAL JURIDICO3.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsappSquare } from '@fortawesome/free-brands-svg-icons';
 
+
+
 const navigation = [
   { name: 'Asistencia virtual', href: '#' },
   { name: 'Asistencia de un experto', href: '#' },
@@ -46,7 +48,7 @@ export default function Inicio() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-5xl text-indigo-700 font-semibold leading-6">
+            <a href="https://wa.me/56931206826?text=Hola,%20necesito%20asesoría%20legal%20de%20laboraljuridico.cl" className="text-5xl text-indigo-700 font-semibold leading-6">
               <span className='text-lg'>Conversemos   </span> <FontAwesomeIcon  icon={faWhatsappSquare} />
             </a>
           </div>
@@ -115,7 +117,7 @@ export default function Inicio() {
             </p>
             <div className="mt-10 flex items-center justify-left gap-x-6">
               <a
-                href="#"
+                href="https://wa.me/56931206826?text=Hola,%20necesito%20asesoría%20legal%20de%20laboraljuridico.cl"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Conversa con un experto laboral
