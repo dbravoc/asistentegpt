@@ -12,6 +12,9 @@ export default function ChatComponent() {
         const userMessage = { sender: 'user', text: messageInput };
         setMessages(messages => [userMessage, ...messages]);
 
+            // Limpiar el input inmediatamente después de enviar el mensaje
+    setMessageInput('');
+
         try {
             const response = await fetch('https://asistentegpt-backend.vercel.app', {
                 method: 'POST',
