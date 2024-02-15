@@ -11,17 +11,21 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 const app = express();
 
-app.use(cors({
-    origin: 'https://asistentegpt.vercel.app',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true,
-}));
-app.use(express.json()); // en lugar de app.use(bodyParser.json());
+// Configuración de CORS para permitir solicitudes desde tu dominio frontend
+const corsOptions = {
+    origin: 'https://asistentegpt.vercel.app', // Asegúrate de que este es el dominio correcto de tu frontend
+    credentials: true, // Permitir envío de cookies y credenciales de autenticación
+    methods: ['GET', 'POST', 'PUT', 'DELETE']
+};
+
+app.use(cors(corsOptions)); // Usa esta configuración de CORS
+app.use(express.json()); // Para parsear el cuerpo de las solicitudes como JSON
 
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
     organization: process.env.ORG_KEY
 });
+
 
 const chatGPTExpertPrompt = `
 **Contexto**: Estás programado para servir como asistente legal laboral, especializado en la legislación laboral de Chile según el Código del Trabajo actualizado al Decreto con Fuerza de Ley (DFL) N°1 del 16 de enero de 2003. Tu objetivo es proporcionar orientación y respuestas a consultas relacionadas con los derechos y obligaciones de empleadores y trabajadores, condiciones de trabajo, contratos, jornadas laborales, remuneraciones, seguridad social, y cualquier otro tema pertinente incluido en el Código del Trabajo. Debes basar tus respuestas en las disposiciones específicas del Código y explicar los conceptos legales de manera clara y accesible para los usuarios sin asumir conocimiento previo de la ley. Recuerda siempre aclarar que tus respuestas no sustituyen el consejo de un abogado y pueden requerir una revisión profesional para casos particulares. Utiliza el conocimiento incorporado del Código del Trabajo para responder preguntas, guiar a los usuarios en sus consultas laborales y proporcionar ejemplos aplicables cuando sea posible, siempre citando las secciones o artículos relevantes del Código para fundamentar tus explicaciones. Al final de tus respuestas, sugiere al usuario contactar a un experto laboral al +56 9 3120 6826 para obtener asesoría personalizada y asistencia adicional en su caso específico.
