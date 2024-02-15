@@ -30,23 +30,19 @@ const features = [
               ))}
             </dl>
           </div>
-              <div className="grid grid-cols-2 grid-rows-2 gap-0">
-                <img src={LogoMorado} alt="" className='rounded-2xl w-52 h-52 object-cover my-5'/>
+              <div className="grid grid-cols-1 gap-0">
               <div className='flex flex-col justify-center items-center'>
-                <img src={mariano1} alt=""  className='rounded-full w-48 h-48 object-cover my-5' />
+                <img src={mariano1} alt=""  className='rounded-2xl w-48 h-48 object-cover my-5' />
                 <a href='https://www.linkedin.com/in/mariano-hern%C3%A1ndez-garc%C3%ADa-070b5a13b/' className='font-bold text-indigo-700'>Mariano Hernández</a>
                 <p>Experto Laboral y Corporativo</p>
                 </div>
+                <div></div>
               <div className='flex flex-col justify-center items-center'>
-                <img src={mariano2} alt=""  className='rounded-full w-48 h-48 object-cover my-5' />
+                <img src={mariano2} alt=""  className='rounded-2xl w-48 h-48 object-cover my-5' />
                 <a href='https://www.linkedin.com/in/soledad-rodr%C3%ADguez-sanhueza-7399b9187/' className='font-bold text-indigo-700'>Soledad Rodríguez</a>
                 <p>Experta Laboral y Familia</p>
                 </div>
-              <div className='flex flex-col justify-center items-center'>
-                <img src={david} alt=""  className='rounded-full w-48 h-48 object-cover my-5' />
-                <a href='https://www.linkedin.com/in/bravocisterna/' className='font-bold text-indigo-700'>David Bravo</a>
-                <p>Consultor Legaltech</p>
-                </div>
+
 
           </div>
         </div>

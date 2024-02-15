@@ -6,10 +6,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsappSquare } from '@fortawesome/free-brands-svg-icons';
 
 
-
+// son los links del header (ej: quienes somos)
 const navigation = [
-  { name: 'Asistencia virtual', href: '#' },
-  { name: 'Asistencia de un experto', href: '#' },
+  { name: '', href: '#' },
+  { name: '', href: '#' },
 
 ]
 

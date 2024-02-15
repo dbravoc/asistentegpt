@@ -4,12 +4,44 @@ import LogoLargo from "../assets/img/LABORALJURIDICO.jpeg";
 
 export default function Formulario() {
   const [showChat, setShowChat] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+  });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setShowChat(true); // Cambia el estado para mostrar el chat y ocultar el formulario
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value,
+    }));
   };
 
+  const handleSubmit = async (e) => { // Marca esta función como async
+    e.preventDefault();
+    // Intenta enviar los datos aquí dentro
+    try {
+      const response = await fetch('https://tu-backend.com/', { // Asegúrate de reemplazar con tu URL correcta
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...formData, userMessage: "Mensaje inicial del usuario" }), // Incluye todos los datos del formulario más cualquier otro dato necesario
+      });
+
+      if (!response.ok) {
+        throw new Error('Error al enviar los datos');
+      }
+
+      const data = await response.json(); // Procesa la respuesta del backend
+      console.log(data); // Muestra los datos o haz algo con ellos
+      setShowChat(true); // Muestra el componente del chat después de enviar los datos correctamente
+    } catch (error) {
+      console.error('Error al enviar formulario:', error);
+    }
+  };
+  
   if (showChat) {
     return <ChatComponent />;
   }
