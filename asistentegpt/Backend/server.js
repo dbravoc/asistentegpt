@@ -13,13 +13,14 @@ const app = express();
 
 // Configuración de CORS para permitir solicitudes desde tu dominio frontend
 const corsOptions = {
-    origin: 'https://asistentegpt.vercel.app', // Asegúrate de que este es el dominio correcto de tu frontend
-    credentials: true, // Permitir envío de cookies y credenciales de autenticación
-    methods: ['GET', 'POST', 'PUT', 'DELETE']
+    origin: 'https://asistentegpt.vercel.app',
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Asegurarse de incluir OPTIONS para solicitudes de preflight
+    allowedHeaders: ['Content-Type', 'Authorization'] // Especificar los headers permitidos
 };
 
-app.use(cors(corsOptions)); // Usa esta configuración de CORS
-app.use(express.json()); // Para parsear el cuerpo de las solicitudes como JSON
+app.use(cors(corsOptions));
+app.use(express.json());
 
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
@@ -42,15 +43,14 @@ const chatGPTExpertPrompt = `
 app.post('/', async (req, res) => {
     try {
         const { name, email, phone, userMessage } = req.body;
+        
         // Inserta los datos en la tabla 'leads'
         const { data, error } = await supabase
             .from('leads')
-            .insert([
-                { name, email, phone }
-            ]);
+            .insert([{ name, email, phone }]);
 
         if (error) {
-            throw error;
+            throw error; // Asegúrate de manejar este error de manera adecuada
         }
 
         console.log('Datos insertados:', data);
@@ -58,14 +58,8 @@ app.post('/', async (req, res) => {
         const completion = await openai.chat.completions.create({
             model: "gpt-3.5-turbo",
             messages: [
-                {
-                    role: "system",
-                    content: chatGPTExpertPrompt
-                },
-                {
-                    role: "user",
-                    content: userMessage
-                }
+                { role: "system", content: chatGPTExpertPrompt },
+                { role: "user", content: userMessage }
             ],
         });
 
@@ -76,7 +70,7 @@ app.post('/', async (req, res) => {
             res.status(500).json({ error: 'Respuesta inesperada de OpenAI' });
         }
     } catch (error) {
-        console.error(error);
+        console.error('Error del servidor:', error);
         res.status(500).json({ error: 'Error en el servidor' });
     }
 });
