@@ -11,17 +11,14 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 const app = express();
 
-// Definición de opciones de CORS antes de su uso
-const corsOptions = {
-    origin: 'https://asistentegpt-backend.vercel.app',
+// Configuración de CORS para permitir solicitudes desde tu dominio frontend
+app.options('*', cors(corsOptions)); // Habilita preflight para todas las rutas
+app.use(cors({
+    origin: 'https://asistentegpt.vercel.app',
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
-};
-
-// Configuración de CORS para permitir solicitudes desde tu dominio frontend
-app.options('*', cors(corsOptions)); // Habilita preflight para todas las rutas
-app.use(cors(corsOptions));
+}));
 
 app.use(express.json());
 

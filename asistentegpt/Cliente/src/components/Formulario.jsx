@@ -22,7 +22,7 @@ export default function Formulario() {
     e.preventDefault();
     // Intenta enviar los datos aquí dentro
     try {
-      const response = await fetch('https://asistentegpt-backend.vercel.app', { // Asegúrate de reemplazar con tu URL correcta
+      const response = await fetch('https://asistentegpt-backend.vercel.app', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
