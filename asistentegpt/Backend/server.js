@@ -13,7 +13,7 @@ const app = express();
 
 // Definición de opciones de CORS antes de su uso
 const corsOptions = {
-    origin: 'https://asistentegpt.vercel.app',
+    origin: 'https://asistentegpt-backend.vercel.app',
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
