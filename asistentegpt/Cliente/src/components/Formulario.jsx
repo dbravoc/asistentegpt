@@ -20,7 +20,8 @@ export default function Formulario() {
 
   const handleSubmit = async (e) => { // Marca esta función como async
     e.preventDefault();
-    // Intenta enviar los datos aquí dentro
+    // Agregar console.log aquí para verificar los datos que se enviarán
+    console.log('Enviando datos al backend:', JSON.stringify({ ...formData, userMessage: "Mensaje inicial del usuario" }));
     try {
       const response = await fetch('https://asistentegpt-backend.vercel.app', {
         method: 'POST',
@@ -71,6 +72,7 @@ export default function Formulario() {
                     name="name"
                     type="text"
                     required
+                    onChange={handleChange}
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
@@ -86,6 +88,7 @@ export default function Formulario() {
                     type="email"
                     autoComplete="email"
                     required
+                    onChange={handleChange}
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>
@@ -101,6 +104,7 @@ export default function Formulario() {
                     name="phone"
                     type="text"
                     required
+                    onChange={handleChange}
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   />
                 </div>  

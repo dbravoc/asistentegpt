@@ -43,6 +43,8 @@ const chatGPTExpertPrompt = `
 `.trim();
 
 app.post('/', async (req, res) => {
+    console.log('Cuerpo de la solicitud recibida:', req.body); // Agregar para depurar
+
     try {
         const { name, email, phone, userMessage } = req.body;
         
