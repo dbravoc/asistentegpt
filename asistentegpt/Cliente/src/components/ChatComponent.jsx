@@ -74,7 +74,7 @@ export default function ChatComponent() {
                     />
                     <button
                         type="submit"
-                        className="rounded-md bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-500"
+                        className="z-10 rounded-md bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-500"
                     >
                         Enviar
                     </button>
