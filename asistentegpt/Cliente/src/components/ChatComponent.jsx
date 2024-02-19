@@ -70,7 +70,7 @@ export default function ChatComponent() {
                         value={messageInput}
                         onChange={(e) => setMessageInput(e.target.value)}
                         placeholder="Conversa por aquí"
-                        className="flex-1 rounded-md border-2 border-gray-300 p-2 focus:border-indigo-500"
+                        className="z-10 flex-1 rounded-md border-2 border-gray-300 p-2 focus:border-indigo-500"
                     />
                     <button
                         type="submit"
