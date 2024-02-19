@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ChatComponent from './ChatComponent'; // Asume que este es tu componente de chat
+import ChatComponent from './ChatComponent'; // Asume que este es tu componente dechat
 import LogoLargo from "../assets/img/LABORALJURIDICO.jpeg";
 
 export default function Formulario() {
