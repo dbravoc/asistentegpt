@@ -52,7 +52,8 @@ app.post('/', async (req, res) => {
             .insert([{ name, email, phone }]);
 
         if (error) {
-            throw error; // Asegúrate de manejar este error de manera adecuada
+                console.error('Error insertando datos en Supabase:', error); // Modificado para registrar el error
+                throw error; // Esto lanzará el error al bloque catch
         }
 
         console.log('Datos insertados:', data);

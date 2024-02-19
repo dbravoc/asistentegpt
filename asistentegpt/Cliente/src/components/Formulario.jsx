@@ -92,7 +92,7 @@ export default function Formulario() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                <label htmlFor="phone" className="block text-sm font-medium leading-6 text-gray-900">
                   Nº de teléfono
                 </label>
                 <div className="mt-2">
