@@ -4,16 +4,9 @@ const cors = require('cors');
 const { OpenAI } = require('openai');
 const { createClient } = require('@supabase/supabase-js');
 
-// Usa variables de entorno para almacenar tus credenciales
-const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
-
-const app = express();
-
 // Definición de corsOptions antes de su uso
 const corsOptions = {
-    origin: 'https://asistentegpt.vercel.app',
+    origin: ['https://asistentegpt.vercel.app','https://laboraljuridico.cl'],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
@@ -24,6 +17,15 @@ app.use(cors(corsOptions)); // Habilita CORS para todas las rutas
 app.options('*', cors(corsOptions)); // Habilita preflight para todas las rutas
 
 app.use(express.json());
+
+
+// Usa variables de entorno para almacenar tus credenciales
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+const app = express();
+
 
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
